@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fairblock Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Fairblock Game</h1>
+    <p class="subtitle">Click as many blocks as you can in 30 seconds!</p>
+    <div id="scoreboard">
+      <span id="score">Score: 0</span>
+      <span id="time">Time: 30s</span>
+    </div>
+    <div class="grid" id="grid">
+      <div class="hole" data-index="0"></div>
+      <div class="hole" data-index="1"></div>
+      <div class="hole" data-index="2"></div>
+      <div class="hole" data-index="3"></div>
+      <div class="hole" data-index="4"></div>
+      <div class="hole" data-index="5"></div>
+      <div class="hole" data-index="6"></div>
+      <div class="hole" data-index="7"></div>
+      <div class="hole" data-index="8"></div>
+    </div>
+    <button id="startBtn" class="glow-button">Start Game</button>
+    <div id="gameOver" class="hidden">
+      <h2>⏳ Time’s up!</h2>
+      <p>You scored <span id="finalScore">0</span> points.</p>
+      <button onclick="startGame()" class="glow-button">Play again</button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
