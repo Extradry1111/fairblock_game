@@ -1,4 +1,3 @@
-
 body, html {
   margin: 0; padding: 0;
   font-family: 'Orbitron', sans-serif;
@@ -19,10 +18,12 @@ body, html {
   text-shadow: 0 0 10px #00BFFF;
   margin-bottom: 30px;
 }
-#scoreboard { font-size: 20px; margin-bottom: 20px;
+#scoreboard {
+  font-size: 20px; margin-bottom: 20px;
   display: flex; justify-content: center; gap: 50px;
 }
-.grid { display: grid;
+.grid {
+  display: grid;
   grid-template-columns: repeat(3, 120px);
   grid-template-rows: repeat(3, 120px);
   gap: 15px; justify-content: center; margin: auto;
@@ -33,6 +34,7 @@ body, html {
   border-radius: 12px;
   box-shadow: 0 0 20px #00BFFF;
   transition: transform 0.3s ease;
+  position: relative;
 }
 .mole {
   background-image: url('images/my-mole.png');
@@ -41,6 +43,8 @@ body, html {
   width: 100%; height: 100%;
   animation: pop 0.3s ease;
   cursor: pointer;
+  position: absolute;
+  top: 0; left: 0;
 }
 @keyframes pop {
   from { transform: scale(0); opacity: 0; }
@@ -73,16 +77,71 @@ body, html {
   box-shadow: 0 0 30px #00BFFF;
   z-index: 100;
   text-align: center;
-  max-width: 300px;
+  max-width: 320px;
 }
-
 #gameOver h2 {
   margin-bottom: 10px;
   font-size: 24px;
   color: #080808;
 }
-
 #gameOver p {
   margin-bottom: 20px;
   font-size: 18px;
+}
+#leaderboard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(55, 177, 238, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #00BFFF;
+  z-index: 100;
+  text-align: center;
+  max-width: 320px;
+  color: #000;
+}
+#leaderboard h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+#leaderboardList {
+  text-align: left;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+#leaderboardList li {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: #001f3f;
+}
+.leaderboard-button {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: #00557a;
+  border: 2px solid #00BFFF;
+  color: white;
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00BFFF;
+  z-index: 200;
+  transition: 0.3s;
+}
+.leaderboard-button:hover {
+  background-color: #0074D9;
+  box-shadow: 0 0 25px #00BFFF;
+}
+#nameForm input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  width: 80%;
+  border-radius: 6px;
+  border: 1px solid #0074D9;
+  margin-bottom: 15px;
 }
